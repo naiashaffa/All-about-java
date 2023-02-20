@@ -129,13 +129,14 @@ class arai {
 	}
     public void bubbleSort(){
         int i,j;
-        for(i=0; i<jml_data; i--){
+        for(i=0; i<jml_data; i++){
             for(j = i+1 ; j < jml_data; j++){
-                if (dt[j].getNim().compareTo(dt[j+].getNim()) > 0 )
+                if (dt[j].getNim().compareTo(dt[j+1].getNim()) > 0)
+				tukar (j, j+1);
             }
-            tukar (j, j+1);
         }
-    }
+	}
+    
     //----------------------------------------------------------------------
 
 	// method untuk melakukan pertukaran tempat
@@ -212,7 +213,7 @@ class prak02_22537144008_bubble {
 			} else if (menu==4) {
 				md.dataArai();
 			} else if (menu==5)
-                md.selectionSort();
+                md.bubbleSort();
 
 		} while (menu >= 1 && menu < 6);
 	} // end main()
