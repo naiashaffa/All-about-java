@@ -103,7 +103,7 @@ class prak01_22537144008 {
 	  		 	cariData = sken.nextInt(); // Scanner untuk data yang akan dihapus
 	  		 	int sts = md.hapus(cariData); // memanggil method hapus pada class metod
 	  		 	if (sts != 0){ // memberikan informasi jika data telah dihapus
-	  		 		System.out.println("Data " + cariData + " sejumlah " + sts + " berhasil dihapus");
+	  		 		System.out.println("Data " + cariData + " sejumlah " + sts + " berhasil dihapus.");
 					i -= sts; 
 				}
 	  		 	else // memberikan informasi jika data yang akan dihapus tidak ditemukan
