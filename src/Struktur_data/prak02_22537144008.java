@@ -218,3 +218,99 @@ class prak02_22537144008 {
 		} while (menu >= 1 && menu < 6);
 	} // end main()
 } // end class datADT
+
+
+/*
+******************************
+Pilih Menu di bawah ini       
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Urutkan data
+6. Keluar
+******************************
+Anda memilih : 1
+Masukkan data mahasiswa ke-1
+NIM  : 2248
+Nama : Naia
+IPK  : 3.9
+Tambah data BERHASIL
+******************************
+Pilih Menu di bawah ini       
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Urutkan data
+6. Keluar
+******************************
+Anda memilih : 1
+Masukkan data mahasiswa ke-2
+NIM  : 2247
+Nama : Kila
+IPK  : 3.7
+Tambah data BERHASIL
+******************************
+Pilih Menu di bawah ini
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Urutkan data
+6. Keluar
+******************************
+Anda memilih : 1
+Masukkan data mahasiswa ke-3
+NIM  : 2249
+Nama : Ruru
+IPK  : 3.8
+Tambah data BERHASIL
+******************************
+Pilih Menu di bawah ini
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Urutkan data
+6. Keluar
+******************************
+Anda memilih : 4
+
+----------------------------------
+NIM             Nama        IPK
+----------------------------------
+2248 |  Naia       |  3.9
+2247 |  Kila       |  3.7
+2249 |  Ruru       |  3.8
+----------------------------------
+
+******************************
+Pilih Menu di bawah ini
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Urutkan data
+6. Keluar
+******************************
+Anda memilih : 5
+******************************
+Pilih Menu di bawah ini
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Urutkan data
+6. Keluar
+******************************
+Anda memilih : 4
+
+----------------------------------
+NIM             Nama        IPK
+----------------------------------
+2247 |  Kila       |  3.7
+2248 |  Naia       |  3.9
+2249 |  Ruru       |  3.8
+---------------------------------- 
+*/
