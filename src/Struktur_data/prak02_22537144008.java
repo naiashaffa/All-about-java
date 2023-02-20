@@ -20,7 +20,7 @@ class mahasiswa { // mahasiswa mempunyai 3 data, nim, nama, dan ipk
 //--------------------------------------------------------------
 	// method untuk menampilkan data mahasiswa
 	public void lihatData() {
-		System.out.println(nimMhs + " |  " + namaMhs + "      |  " + ipkMhs);
+		System.out.println(nimMhs + " |  " + namaMhs + "       |  " + ipkMhs);
 	}
 //--------------------------------------------------------------
 	// method memperoleh (mengambil) data nama
@@ -138,15 +138,14 @@ class arai {
             tukar (indeks, i);
         }
     }
-    //----------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 	// method untuk melakukan pertukaran tempat
 	private void tukar (int indeks, int j) {
 	mahasiswa temp = dt[indeks];
 		dt[j] = dt[indeks];
-		dt[j] = temp;
+		dt[indeks] = temp;
 	} //end tukar()
-
 }// end class arai
 /////////////////////////////////////////////////////////////////////////
 
