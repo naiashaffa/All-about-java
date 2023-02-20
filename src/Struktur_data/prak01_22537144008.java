@@ -45,7 +45,7 @@ class metod {
 		for(i=0; i<jml_data; i++){ // mencari data yang akan dihapus
             if(dt[i] == hps){ 
                 for(int j = i; j < jml_data; j++) // melakukan penimpaan data
-                    dt[j] = dt[j + 1]; // menimpa data
+                    dt[j] = dt[j + 1]; // terjadi menimpa data
                 jml_data--; // mengurangi panjang array
                 i--; // pengecekan ulang pada index
             }
@@ -78,7 +78,7 @@ class prak01_22537144008 {
 	  			  		
 	  		if (menu==1){ // input data
 				System.out.print("Jumlah data yang akan dimasukan = "); 
-				int jum = sken.nextInt(); // Scanner untuk jumlah data yang akan ditambahkan
+				int jum = sken.nextInt(); // Scanner untuk menambah jumlah data yang akan diinput
 				for(int j = 0; j < jum; j++){
 					System.out.print("Masukkan data ke-" + i++ + " = ");
 					dat = sken.nextInt(); // input data baru
@@ -120,3 +120,60 @@ class prak01_22537144008 {
 	} // end main()
 } // end class tgsPertamaOK
 
+/*
+******************************
+Pilih Menu di bawah ini
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Keluar
+******************************
+Anda memilih : 1
+Jumlah data yang akan dimasukan = 6
+Masukkan data ke-1 = 19
+Masukkan data ke-2 = 23
+Masukkan data ke-3 = 4
+Masukkan data ke-4 = 23
+Masukkan data ke-5 = 9
+Masukkan data ke-6 = 8
+6 data baru telah disimpan    
+
+******************************
+Pilih Menu di bawah ini       
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Keluar
+******************************
+Anda memilih : 4
+19
+23
+4
+23
+9
+8
+
+******************************
+Pilih Menu di bawah ini       
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Keluar
+******************************
+Anda memilih : 3
+Data yang anda hapus = 23
+Data 23 sejumlah 2 berhasil dihapus.
+
+******************************
+Pilih Menu di bawah ini
+1. Memasukkan data
+2. Pencarian data
+3. Penghapusan data
+4. Penampilan data
+5. Keluar
+******************************
+Anda memilih :  
+*/
