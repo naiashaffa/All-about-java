@@ -20,7 +20,7 @@ class mahasiswa { // mahasiswa mempunyai 3 data, nim, nama, dan ipk
 //--------------------------------------------------------------
 	// method untuk menampilkan data mahasiswa
 	public void lihatData() {
-		System.out.println(nimMhs + " |  " + namaMhs + "       |  " + ipkMhs);
+		System.out.println(nimMhs + " |  " + namaMhs + "      |  " + ipkMhs);
 	}
 //--------------------------------------------------------------
 	// method memperoleh (mengambil) data nama
@@ -222,7 +222,7 @@ class prak02_22537144008 {
 
 /*
 ******************************
-Pilih Menu di bawah ini       
+Pilih Menu di bawah ini
 1. Memasukkan data
 2. Pencarian data
 3. Penghapusan data
@@ -232,12 +232,12 @@ Pilih Menu di bawah ini
 ******************************
 Anda memilih : 1
 Masukkan data mahasiswa ke-1
-NIM  : 2248
+NIM  : 22537144008
 Nama : Naia
 IPK  : 3.9
 Tambah data BERHASIL
 ******************************
-Pilih Menu di bawah ini       
+Pilih Menu di bawah ini
 1. Memasukkan data
 2. Pencarian data
 3. Penghapusan data
@@ -247,9 +247,9 @@ Pilih Menu di bawah ini
 ******************************
 Anda memilih : 1
 Masukkan data mahasiswa ke-2
-NIM  : 2247
+NIM  : 22537144010
 Nama : Kila
-IPK  : 3.7
+IPK  : 3.8
 Tambah data BERHASIL
 ******************************
 Pilih Menu di bawah ini
@@ -262,9 +262,9 @@ Pilih Menu di bawah ini
 ******************************
 Anda memilih : 1
 Masukkan data mahasiswa ke-3
-NIM  : 2249
+NIM  : 22537144005
 Nama : Ruru
-IPK  : 3.8
+IPK  : 3.7
 Tambah data BERHASIL
 ******************************
 Pilih Menu di bawah ini
@@ -280,9 +280,9 @@ Anda memilih : 4
 ----------------------------------
 NIM             Nama        IPK
 ----------------------------------
-2248 |  Naia       |  3.9
-2247 |  Kila       |  3.7
-2249 |  Ruru       |  3.8
+22537144008 |  Naia      |  3.9
+22537144010 |  Kila      |  3.8
+22537144005 |  Ruru      |  3.7
 ----------------------------------
 
 ******************************
@@ -309,8 +309,8 @@ Anda memilih : 4
 ----------------------------------
 NIM             Nama        IPK
 ----------------------------------
-2247 |  Kila       |  3.7
-2248 |  Naia       |  3.9
-2249 |  Ruru       |  3.8
+22537144005 |  Ruru      |  3.7
+22537144008 |  Naia      |  3.9
+22537144010 |  Kila      |  3.8
 ---------------------------------- 
 */
