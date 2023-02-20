@@ -143,8 +143,8 @@ class arai {
 	// method untuk melakukan pertukaran tempat
 	private void tukar (int indeks, int j) {
 	mahasiswa temp = dt[indeks];
-		dt[j] = dt[indeks];
-		dt[indeks] = temp;
+		dt[indeks] = dt[j];
+		dt[j] = temp;
 	} //end tukar()
 }// end class arai
 /////////////////////////////////////////////////////////////////////////
