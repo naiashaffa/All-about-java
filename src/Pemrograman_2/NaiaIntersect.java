@@ -51,7 +51,7 @@ public class NaiaIntersect {
                 }
             }
         }
-        return list;
+        return list;                //me-return 
     }
 }
 
