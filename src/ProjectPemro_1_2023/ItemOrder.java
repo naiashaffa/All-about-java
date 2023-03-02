@@ -35,7 +35,7 @@ public class ItemOrder {
 
             double total = numBulkGrup * bulkPrice + numNonBulkItem * item.getPrice();
             return total;
-        } else id (item.getName(). ewuals("Sereal")){
+        } else if (item.getName(). equals("Sereal")){
             int bulkSize = 2;
             double bulkPrice = item.getPrice() * 1.0;
 
