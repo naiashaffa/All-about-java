@@ -16,7 +16,7 @@ class ItemOrder {
     
     public double getPrice(){
         if(item.getName(). equals("Tissu")){
-            int bulkSize = 2; 
+            int bulkSize = 2;               //budle set 2 item
             double bulkPrice = item.getPrice() * 1.5;
 
             int numBulkGrup = quantity / bulkSize;
