@@ -1,6 +1,8 @@
 package ProjectPemro_1_2023;
 
-class ShoppingCart {
+import java.util.ArrayList;
+
+public class ShoppingCart {
     private ArrayList<ItemOrder> thecart;
 
     public ShoppingCart(){
