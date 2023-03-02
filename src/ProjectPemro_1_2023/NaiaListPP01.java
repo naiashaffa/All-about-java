@@ -7,11 +7,11 @@ public class NaiaListPP01 {
         Item sereal = new Item("Sereal", 6.0);
 
         ShoppingCart cart = new ShoppingCart();
-        cart.addItemOrder(ItemOrder1);
-        cart.addItemOrder(ItemOrder2);
-        cart.addItemOrder(ItemOrder3);
+        cart.addItemOrder(itemOrder1);
+        cart.addItemOrder(itemOrder2);
+        cart.addItemOrder(itemOrder3);
 
         cart.printThecart();
-        System.our.println("Total price: " + cart.getTotalPrice());
+        System.out.println("Total price: " + cart.getTotalPrice());
     }
 }
