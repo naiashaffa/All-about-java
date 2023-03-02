@@ -1,6 +1,6 @@
 package ProjectPemro_1_2023;
 
-class ItemOrder {
+public class ItemOrder {
     private Item item;
     private int quantity;
 
