@@ -27,7 +27,7 @@ public class ItemOrder {
             double total = numBulkGrup * bulkPrice + numNonBulkItem * item.getPrice();
             return total;
         }else if (item.getName(). equals("Apple")){
-            int bulkSize = 2;
+            int bulkSize = 3;
             double bulkPrice = item.getPrice() * 0.5;
 
             int numBulkGrup = quantity / bulkSize;
@@ -35,7 +35,16 @@ public class ItemOrder {
 
             double total = numBulkGrup * bulkPrice + numNonBulkItem * item.getPrice();
             return total;
-        } else 
+        } else id (item.getName(). ewuals("Sereal")){
+            int bulkSize = 2;
+            double bulkPrice = item.getPrice() * 1.0;
+
+            int numBulkGrup = quantity / bulkSize;
+            int numNonBulkItem = quantity % bulkSize;
+
+            double total = numBulkGrup * bulkPrice + numNonBulkItem * item.getPrice();
+            return total;
+        } else
         return quantity * item.getPrice();
     }
 }
