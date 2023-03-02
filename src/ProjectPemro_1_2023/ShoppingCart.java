@@ -15,10 +15,10 @@ public class ShoppingCart {
         thecart.remove(itemOrder);
     }
 
-    public ItemOrder search(Item name){
-        for(ItemOrder itemoOrder : thecart){
+    public ItemOrder getItemOrder( String itemName){
+        for(ItemOrder itemOrder : thecart){
             if(itemOrder.getItem().getName. equals(itemName)){
-                return itemoOrder;
+                return itemOrder;
             }
         }
         return null;
