@@ -15,7 +15,7 @@ public class ShoppingCart {
         thecart.remove(itemOrder);
     }
 
-    public ItemOrder getItemOrder( String itemName){
+    public ItemOrder search ( String itemName){
         for(ItemOrder itemOrder : thecart){
             if(itemOrder.getItem().getName. equals(itemName)){
                 return itemOrder;
