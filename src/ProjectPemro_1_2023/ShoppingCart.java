@@ -30,7 +30,13 @@ public class ShoppingCart {
         }
         return total;
     }
-    public voud printThecart(){
-        System.out.println
+    public void printThecart(){
+        System.out.println ("SHOP RECEIPT");
+        System.out.println("******************");
+        System.out.println("The items : ");
+        for(ItemOrder itemOrder : thecart){
+            System.out.println(itemOrder.getQuantity()+ " " + itemOrder.getItem().getName());
+        }
+        System.out.println("******************");
     }
 }
