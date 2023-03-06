@@ -21,8 +21,8 @@ import java.util.Scanner;
 //--------------------------------------------------------------
     //method untuk menampilkan data pasien
     public void lihatData(){
-        System.out.println("Nama : " + namaPas + "|| Keluhan : " + keluhanPas + "|| Alamat : " + alamatPas);
-        System.out.println("____________________________________________________");
+        System.out.println("Nama : " + namaPas + " || Keluhan : " + keluhanPas + " || Alamat : " + alamatPas);
+        System.out.println("--------------------------------------------------------------------");
 }
 //--------------------------------------------------------------
     //method mengambil data nama pasien
@@ -51,28 +51,29 @@ class queue {
     public queue(int m){
         max = m;
         antrian = new pasien[max];
-        ekor = -1;
+        ekor = -1;              //inisialisasi
     }
 //--------------------------------------------------------------
     public void enQueue(pasien data){
-        antrian[++ekor] = data;
+        ekor++;
+        antrian[ekor] = data;
     }
 
     public pasien deQueue(){
         pasien terpanggil = antrian[0];
         for(int i = 0; i < ekor; i++){
             antrian[i] = antrian[i+1];
-            ekor--;
         }
+        ekor--;
         return terpanggil;
     }
     public pasien peek(){
         return antrian[0];
     }
     public boolean isFull(){
-        return (ekor == max-1);
+        return (ekor == max-1);         //berilai true jika queue full
     }
-    public boolean isEmpty(){
+    public boolean isEmpty(){           //bernilai true jika queue kosong
         return (ekor == -1);
     }
 //--------------------------------------------------------------
@@ -112,7 +113,7 @@ class queue {
 
 public class prak03_22537144008 {
 	public static void main(String[] args) {
-        int i = 0, max = 101;
+        int i = 0, max = 99;
         Scanner sken = new Scanner(System.in);
 		queue queue = new queue(max); // queue menampung sampai 5 data
         String nama, keluhan, alamat;
@@ -122,9 +123,9 @@ public class prak03_22537144008 {
             System.out.println("######################################");
 			System.out.println("Pilih Menu");
 			System.out.println("1. Pendaftaran Pasien");
-			System.out.println("2. Pemanggilan Pasien");
-			System.out.println("3. Daftar Antrian Pasien");
-			System.out.println("4. Cari Pasien");
+			System.out.println("2. Daftar Antrian Pasien");
+			System.out.println("3. Cari Pasien");
+			System.out.println("4. Pemanggilan Pasien");
 			System.out.println("5. Keluar");
             System.out.println("######################################");
 			System.out.print("Menu yang dipilih : ");
@@ -152,24 +153,10 @@ public class prak03_22537144008 {
 					break;
 				}
 				case 2 : {
-					if(!queue.isEmpty()){
-                        pasien terpanggil = queue.dipanggil();
-                        System.out.println("Panggilan kepada pasien atas nama " + terpanggil.getNama() + " diharap menuju ruang 1.");
-                        System.out.println("");
-                        i--;
-                    }else {
-                        System.out.println("Daftar antian kosong.");
-                        System.out.println("");
-                        System.out.println("");
-                        
-                    }
-					break;
-				}
-				case 3 : {
 					System.out.println("----------------------");
                     if(!queue.isEmpty()){
                         System.out.println("    DAFTAR PASIEN ");
-                        System.out.println("");
+                        System.out.println("----------------------");
                         queue.lihat();
                         System.out.println("");
                         System.out.println("");
@@ -180,19 +167,28 @@ public class prak03_22537144008 {
                     }
 					break;
 				}
-				case 4 : {
-                    System.out.println("");
-                    System.out.println("");
-                    System.out.println("");
-                    System.out.println("");
+				case 3 : {
+                    System.out.print("Nama Pasien :");
                     String cari = sken.next();
                     pasien hasilCari = queue.cari(cari);
                     if(hasilCari != null){
                         hasilCari.lihatData();
                         System.out.println("");
-                        System.out.println("");
                     }else {
-                        System.out.println("Pasien tida ditemukan pada daftar.");
+                        System.out.println("");
+                        System.out.println("Pasien tidak ditemukan pada daftar.");
+                        System.out.println("");
+                    }
+					break;
+				}
+				case 4 : {
+                    if(!queue.isEmpty()){
+                        pasien terpanggil = queue.dipanggil();
+                        System.out.println("Panggilan kepada pasien atas nama " + terpanggil.getNama() + " diharap menuju ruang 1.");
+                        System.out.println("");
+                        i--;
+                    }else {
+                        System.out.println("xx DAFTAR ANTRIAN KOSONG xx ");
                         System.out.println("");
                         System.out.println("");
                     }
