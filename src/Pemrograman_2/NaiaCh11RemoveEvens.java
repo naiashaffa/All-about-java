@@ -17,11 +17,13 @@ public class NaiaCh11RemoveEvens {
         }
 
         System.out.println("Tampilkan data = " + s1);
-        System.out.print("Data genap = " + removeEvens(s1));
+        Set<Integer> s2 = removeEvens(s1);
+        System.out.println("Data ganjil = " + s1);
+        System.out.print("Data genap = " + s2);
     }
     public static Set<Integer> removeEvens (Set<Integer> s1){
         Set<Integer> s2 = new TreeSet<Integer>();
-        Iterator<Integer> ganjil = s1.iterator();
+        Iterator<Integer> ganjil = s1.iterator();          // iterator karena memilah data (eliminate)
         while (ganjil.hasNext()){
             int num = ganjil.next();
             if(num % 2 == 0){
