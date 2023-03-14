@@ -1,10 +1,8 @@
 package Struktur_data;
 
-
-import java.lang.reflect.Method;
-import java.util.List;
-// Simple Linked List
 import java.util.Scanner;
+// Simple Linked List
+
 
 //untuk menyimpan data mahasiswa
 class mahasiswa {                   
@@ -123,7 +121,7 @@ public class prak04_22537144008 {
 			System.out.print("Menu yang dipilih : ");
   	    	menu = sken.nextInt();
   	    	System.out.println("");
-        }
+        
 
         switch(menu) {
             case 1 : {
@@ -144,13 +142,17 @@ public class prak04_22537144008 {
 
               if(theList.cari(nim, 1 ).isEmpty()){
                   theList.insertFirst(nim, nama, kota);
+                  System.out.println("Data Mahasiswa Tersebut Telah Tersimpan");
+              } else {
+                System.out.println("NIM Sudah Terdaftar");
               }
+              System.out.println("");
+            } 
             }
-                
-            }
+            break;
 
             case 2 : {
-                System.out.println("Data mahasasis yang Anda cari")
+                System.out.println("Data mahasasis yang Anda cari");
             }
 
             case 3 : {
@@ -160,8 +162,9 @@ public class prak04_22537144008 {
             case 4 : {
                 System.out.println("Data Mahasiswa");
             }
-        } while (menu >= 1 && menu < 5);
-	} // end main()
+        } 
+	} while (menu >= 1 && menu < 5);
+    } // end main()
 } // end class LinkListApp
 ////////////////////////////////////////////////////////////////
 
