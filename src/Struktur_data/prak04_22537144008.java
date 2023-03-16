@@ -1,17 +1,17 @@
 package Struktur_data;
 
-import java.util.Scanner;
+import java.util.*;
 // Simple Linked List
 
 
 //untuk menyimpan data mahasiswa
-class mahasiswa {                   
+class NodeMhs {                   
 	public String nimMhs;
 	public String namaMhs;
     public String kotaMhs;
-	public mahasiswa next;
+	public NodeMhs next;
 // -------------------------------------------------------------
-	public mahasiswa(String nim, String nama, String kota) { // constructor
+	public NodeMhs(String nim, String nama, String kota) { // constructor
 		nimMhs = nim;
 		namaMhs = nama;
         kotaMhs = kota;
@@ -22,6 +22,7 @@ class mahasiswa {
         System.out.println("--------------------------------------------------------------------");
 
     }
+// -------------------------------------------------------------
     public String getNim(){
         return nimMhs; 
     }
@@ -48,14 +49,14 @@ class LinkList {
 	}
 // -------------------------------------------------------------
     public void insertFirst(String nimMhs, String namaMhs, String kotaMhs) {
-        mahasiswa newmahasiswa = new mahasiswa(nimMhs, namaMhs, kotaMhs);
-        newmahasiswa = first;
+        NodeMhs newNodeMhs = new NodeMhs(nimMhs, namaMhs, kotaMhs);
+        newNodeMhs.next = first;
 
-        first = newmahasiswa;
+        first = newNodeMhs;
     }
 // -------------------------------------------------------------
-    public mahasiswa delete() {
-        mahasiswa temp = first;
+    public NodeMhs delete() {
+        NodeMhs temp = first;
         first = first.next;
 
         return temp;
@@ -152,7 +153,33 @@ public class prak04_22537144008 {
             break;
 
             case 2 : {
+                String cari;
+                LinkList hasil;
+
                 System.out.println("Data mahasasis yang Anda cari");
+                System.out.println("Mencari berdasarkan : ");
+                System.out.println("1. NIM");
+                System.out.println("2. Nama");
+                System.out.println("3. Kota");
+                System.out.println("Pilih : ");
+                Pilih = scan.nextInt();
+                System.out.println("");
+
+                switch(Pilih){
+                    
+                case 1:
+                System.out.println("Masukan NIM Mahasiswa : ");
+                cari = scan.next();
+                System.out.println("");
+                
+                hasil = list.cari(cari, Pilih);
+                if(!hasil.isEmpty()){
+                    System.out.println("Data Mahasiswa yang ditemukan : ");
+                    hasil.lihatData();
+                }else {
+                    System.out.println("Data Mahasiswa dengan NIM " + cari + " Tidak ditemuka");
+                }
+                }
             }
 
             case 3 : {
