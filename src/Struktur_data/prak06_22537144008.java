@@ -2,8 +2,6 @@ package Struktur_data;
 
 import java.util.Scanner;
 
-import javafx.scene.chart.PieChart.Data;
-
 class Node06 {
     private int kodeMK;
     private String namaMK;
@@ -28,8 +26,8 @@ class Node06 {
     }
 // -------------------------------------------------------------
     // method untuk menampilkan data matkul
-    public void lihatData() {
-    System.out.printf("|%-12d|%-12d| \n",kodeMK, namaMK);       //
+    public void lihatList() {
+    System.out.println("KODE : " + kodeMK + ", Mata Kuliah : " + namaMK);       //
    }
 } // end class mata kuliah
 // -------------------------------------------------------------
@@ -173,7 +171,7 @@ class doubleLink {
         System.out.println("Menampilkan data di tinjau dari awal : ");
         Node06 index = first;       // pointer index menunjuk data yang ditunjuk oleh pointer first
         while (index != null) {
-            index.lihatData();      // memanggil method untuk menampilkan data (lihatData)
+            index.lihatList();      // memanggil method untuk menampilkan data (lihatData)
             index =index.next;      
         }
         System.out.println("");
@@ -184,20 +182,24 @@ class doubleLink {
         System.out.println("Menampilkan data di tinjau dari akhir : ");
         Node06 index = last;        // pointer index menunjuk data yang ditunjuk oleh pointer last
         while (index != null) {
-            index.lihatData();      // memanggil method untuk menampilkan data (lihatData)
+            index.lihatList();      // memanggil method untuk menampilkan data (lihatData)
             index = index.previous;
         }
         System.out.println("");
     }
 }   // end class doubleLink
+// -------------------------------------------------------------
 
 public class prak06_22537144008 {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+        int i = 0;
+        doubleLink list = new doubleLink();
+        int kodeMK, data;
+        String namaMk;
 
-
-        int menu, menuA;
+        int menu, subMenu;      // terdapat menu sebanyak 4 dengan submenu tergantung menu yang di pilih
 
         do {
             System.out.println("==================================");
@@ -210,63 +212,168 @@ public class prak06_22537144008 {
             System.out.print("Menu yang dipilih : ");
             menu = input.nextInt();
             System.out.println("");
+            
+// -------------------------------------------------------------
+            // submenu yang terdapat dalam menu opsi 1
+            switch (menu) {
+                case 1:
+                System.out.println("---------- MEMASUKAN DATA ----------");
+                System.out.println("1. Tambah data pada awal list");   
+                System.out.println("2. Tambah data pada akhir list");    
+                System.out.println("3. Tambah data setelah data tertentu");    
+                System.out.println("4. Tambah data sebelum data tertentu");
+                System.out.println("5. Kembali");    
+                System.out.print("Menu yang dipilih : ");
+                subMenu = input.nextInt();
+                System.out.println("");
+                System.out.println("------------------------------------");
+                
+                switch (subMenu) {
+                    case 1:
+                        System.out.println(" Data Ditambahkan Pada Awal List");
+                        System.out.println("");
+                        break;
+                    case 2:
+                        System.out.println(" Data Ditambahkan Pada Akhir List");
+                        System.out.println("");
+                        break;
+                    case 3:
+                        System.out.println(" Data Ditambahkan Setelah Data Tertentu");
+                        System.out.println("");
+                        break;
+                    case 4:
+                        System.out.println(" Data Ditambahkan Sebelum Data Tertentu");
+                        System.out.println("");
+                        break;
+                    case 5:
+                        break;
+                }
+                if (subMenu != 5) {
+                    System.out.print("Jumlah data yang di input : ");
+                    int jumlah = input.nextInt();
+                    System.out.println("");
 
-            switch(menu) {
-                case 1: {
-                    do {
-                        System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-                        System.out.println("   PENDAFTARAN MATA KULIAH  ");
-                        System.out.println("Memasukan data berdasarkan : ");
-                        System.out.println("1. Kode Mata Kuliah");
-                        System.out.println("2. Nama Mata Kuliah");
-                        System.out.print("Pilih : ");
-                        menu = input.nextInt();
+                    for(i = 1; i <= jumlah ; i++) {
+                        System.out.println("Data ke-" + i + " : ");
+                        System.out.print("Kode Mata Kuliah : ");
+                        kodeMK = input.nextInt();
+                        System.out.print("Nama Mata Kuliah : ");
+                        namaMk = input.next();
                         System.out.println("");
 
-                        switch(menu) {
-                            case 1: {
-                                System.out.print("Masukan Kode Mata Kuliah : ");
-                                    break;
-                            }
-                            case 2: {
-                                System.out.print("Masukan Nama Mata Kuliah");
-                                    break;
-                            }
+                        switch (subMenu) {
+                            case 1:
+                                list.insertFirst(kodeMK, namaMk);
+                                System.out.println("");
+                                System.out.println("!!!! Berhasil Ditambahkan !!!!");
+                                break;
+                            case 2:
+                                list.insertLast(kodeMK, namaMk);
+                                System.out.println("");
+                                System.out.println("!!!! Berhasil Ditambahkan !!!!");
+                                break;
+                            case 3:
+                                System.out.print("Data Ditambahkan Setelah (kode) : ");
+                                data =  input.nextInt();
+
+                                if(!list.insertAfter(data, kodeMK, namaMk)) {
+                                    System.out.println(" || !! DATA TIDAK DITEMUKAN !! ||");
+                                } else {
+                                    System.out.println("");
+                                    System.out.println("!!!! Berhasil Ditambahkan !!!!");
+                                }
+                                break;
+                            case 4:
+                                System.out.print("Data Ditambahkan Sebelum (kode) : ");
+                                data =  input.nextInt();
+
+                                if(!list.insertBefore(data, kodeMK, namaMk)) {
+                                    System.out.println(" || !! DATA TIDAK DITEMUKAN !! ||");
+                                } else {
+                                    System.out.println("");
+                                    System.out.println("!!!! Berhasil Ditambahkan !!!!");
+                                }
+                            default:
+                            System.out.println("|||| ERROR ||||");
+                                break;
                         }
                     }
-                    break;
+                    System.out.println("");
                 }
-                case 2: {
-                    if (condition) {
-                        System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-                        System.out.println("   MENGHAPUS DATA MATA KULIAH");
-                        System.out.println("Menghapus data berdasarkan : ");
-                        System.out.println("1. Kode Mata Kuliah");
-                        System.out.println("2. Nama Mata Kuliah");
-                        System.out.print("Pilih : ");
-                        menu = input.nextInt();
-                        System.out.println("");
+                break;
 
-                        switch (menu) {
-                            case 1: {
-                                System.out.print("Masukan Kode Mata Kuliah : ");
-                                break;
-                            }
-
-                            case 2: {
-                                System.out.print("Masukan Nama Mata Kuliah : ");
-                                break;
-                            }
+                case 2: 
+                System.out.println("---------- MENGHAPUS DATA ----------");
+                System.out.println("1. Hapus data pada awal list");   
+                System.out.println("2. Hapus data pada akhir list");    
+                System.out.println("3. Hapus data tertentu");    
+                System.out.println("4. Kembali");    
+                System.out.print("Menu yang dipilih : ");
+                subMenu = input.nextInt();
+                System.out.println("");
+                System.out.println("------------------------------------");
+                
+                switch (subMenu) {
+                    case 1:
+                        if(list.deleteFirst() == null) {
+                            System.out.println("|| !! Tidak Ada Data !! ||");
+                        } else {
+                            System.out.println(" Data Dihapus Pada Awal List");
                         }
-                    }
+                        break;
+                    case 2:
+                        if(list.deleteLast() == null) {
+                            System.out.println("|| !! Tidak Ada Data !! ||");
+                        } else {
+                            System.out.println(" Data Dihapus Pada Awal List");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Data Yang Dihapus (kode) : ");
+                        data =  input.nextInt();
+
+                        if(list.delete(data) == null) {
+                            System.out.println(" || !! DATA TIDAK DITEMUKAN !! ||");
+                        } else {
+                            System.out.println("!!!! Berhasil Ditambahkan !!!!");
+                        }
+                    case 4: 
+                        break;
+                    default:
+                        System.out.println("|||| ERROR ||||");
+                        break;
                 }
-                case 3: {
-                    if (condition) {
-                        System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-                        System.out.println("   Data Mata Kuliah ");  
-                    }
+                System.out.println("");
+                break;
+
+                case 3:
+                System.out.println("---------- MENAMPILKAN DATA ----------");
+                System.out.println("1. Lihat data dari awal list");   
+                System.out.println("2. Lihat data pada akhir list");    
+                System.out.println("3. Kembali");    
+                System.out.print("Menu yang dipilih : ");
+                subMenu = input.nextInt();
+                System.out.println("");
+                System.out.println("------------------------------------");
+                
+                if (!list.isEmpty()) {
+                    switch (subMenu) {
+                    case 1:
+                            list.tampilMaju();
+                        break;
+                    case 2:
+                            list.tampilMundur();
+                        break;
+                    case 3: 
+                        break;
+                    default:
+                        System.out.println("|||| ERROR ||||");
+                        break;
                 }
-            }
+                System.out.println("");
+                break;    
+                }
+            }   
         } while(menu >= 1 && menu < 4);
         System.out.println("Program dihentikan. ");
         System.out.println("");
