@@ -27,7 +27,7 @@ class Node06 {
 // -------------------------------------------------------------
     // method untuk menampilkan data matkul
     public void lihatList() {
-    System.out.println("KODE : " + kodeMK + ", Mata Kuliah : " + namaMK);       //
+    System.out.println("KODE : " + kodeMK + "   | Mata Kuliah : " + namaMK);       //
    }
 } // end class mata kuliah
 // -------------------------------------------------------------
@@ -90,7 +90,7 @@ class doubleLink {
         if (last.next == null) {        // jika last.next sama dengan null
             first = null;               // pointer first menunjuk ke null         
         } else {                        // jika tidak, maka
-            last.next.previous = null;      // last.next.previous menunjuk ke null
+            last.previous.next = null;      // last.previous.next menunjuk ke null
             last = last.previous;           // pointer last menunjuk data yang ditunjuk pointer last.previous
         }
         return temp;        // return data yang dihapus
@@ -161,7 +161,7 @@ class doubleLink {
         if (index == last) {            // jika index sama dnegan null
             last = index.previous;      // pointer last menunjuk data yang ditunjuk oleh pointer index.previous
         } else {                        // jika tidak, maka
-            index.previous.next = index.previous;   // index.previous.next menunjuk data yang ditunjuk oleh indext.previous
+            index.next.previous = index.previous;   // index.next.previous menunjuk data yang ditunjuk oleh indext.previous
         }
         return index;       // me-return data yang dihapus
     } 
@@ -193,7 +193,7 @@ class doubleLink {
 public class prak06_22537144008 {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);        
         int i = 0;
         doubleLink list = new doubleLink();
         int kodeMK, data;
@@ -249,15 +249,15 @@ public class prak06_22537144008 {
                         break;
                 }
                 if (subMenu != 5) {
-                    System.out.print("Jumlah data yang di input : ");
+                    System.out.print("Jumlah data yang di input : ");       // menanyakan jumlah inputan
                     int jumlah = input.nextInt();
                     System.out.println("");
 
                     for(i = 1; i <= jumlah ; i++) {
-                        System.out.println("Data ke-" + i + " : ");
+                        System.out.println("Data ke-" + i );
                         System.out.print("Kode Mata Kuliah : ");
                         kodeMK = input.nextInt();
-                        System.out.print("Nama Mata Kuliah : ");
+                        System.out.print("Nama Mata Kuliah (hanya bisa 1 kata): ");
                         namaMk = input.next();
                         System.out.println("");
 
@@ -266,11 +266,13 @@ public class prak06_22537144008 {
                                 list.insertFirst(kodeMK, namaMk);
                                 System.out.println("");
                                 System.out.println("!!!! Berhasil Ditambahkan !!!!");
+                                System.out.println("");
                                 break;
                             case 2:
                                 list.insertLast(kodeMK, namaMk);
                                 System.out.println("");
                                 System.out.println("!!!! Berhasil Ditambahkan !!!!");
+                                System.out.println("");
                                 break;
                             case 3:
                                 System.out.print("Data Ditambahkan Setelah (kode) : ");
@@ -293,8 +295,10 @@ public class prak06_22537144008 {
                                     System.out.println("");
                                     System.out.println("!!!! Berhasil Ditambahkan !!!!");
                                 }
-                            default:
-                            System.out.println("|||| ERROR ||||");
+                            case 5:
+                                break;    
+                        default:
+                            System.out.println("|||| ERROR ||||");      // jika inputan tidak sesuai
                                 break;
                         }
                     }
@@ -302,6 +306,8 @@ public class prak06_22537144008 {
                 }
                 break;
 
+// -------------------------------------------------------------
+            // submenu yang terdapat dalam menu opsi 2
                 case 2: 
                 System.out.println("---------- MENGHAPUS DATA ----------");
                 System.out.println("1. Hapus data pada awal list");   
@@ -325,12 +331,12 @@ public class prak06_22537144008 {
                         if(list.deleteLast() == null) {
                             System.out.println("|| !! Tidak Ada Data !! ||");
                         } else {
-                            System.out.println(" Data Dihapus Pada Awal List");
+                            System.out.println(" Data Dihapus Pada Akhir List");
                         }
                         break;
                     case 3:
-                        System.out.println("Data Yang Dihapus (kode) : ");
-                        data =  input.nextInt();
+                        System.out.print("Data Yang Dihapus (kode) : ");
+                        data =  input.nextInt();        // memasukan inputan berupa kode yang ingin di hapus
 
                         if(list.delete(data) == null) {
                             System.out.println(" || !! DATA TIDAK DITEMUKAN !! ||");
@@ -340,12 +346,14 @@ public class prak06_22537144008 {
                     case 4: 
                         break;
                     default:
-                        System.out.println("|||| ERROR ||||");
+                        System.out.println("|||| ERROR ||||");      //jika inputan tidak sesuai
                         break;
                 }
                 System.out.println("");
                 break;
 
+// -------------------------------------------------------------
+            // submenu yang terdapat dalam menu opsi 3                
                 case 3:
                 System.out.println("---------- MENAMPILKAN DATA ----------");
                 System.out.println("1. Lihat data dari awal list");   
@@ -358,16 +366,16 @@ public class prak06_22537144008 {
                 
                 if (!list.isEmpty()) {
                     switch (subMenu) {
-                    case 1:
-                            list.tampilMaju();
-                        break;
-                    case 2:
+                        case 1:
+                            list.tampilMaju();              // memanggil method
+                            break;
+                        case 2:
                             list.tampilMundur();
-                        break;
-                    case 3: 
-                        break;
-                    default:
-                        System.out.println("|||| ERROR ||||");
+                            break;
+                        case 3: 
+                            break;
+                        default:
+                        System.out.println("|||| ERROR ||||");      // jika inputan tidak sesuai
                         break;
                 }
                 System.out.println("");
