@@ -1,3 +1,4 @@
+package Struktur_data;
 
 import java.util.Scanner;
 
