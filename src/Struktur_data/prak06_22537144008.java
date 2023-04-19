@@ -1,6 +1,8 @@
-package Struktur_data;
 
 import java.util.Scanner;
+
+// Nama : Naia Shaffa Camila
+// Nim  : 22537144008
 
 class Node06 {
     private int kodeMK;
@@ -35,7 +37,7 @@ class Node06 {
 class doubleLink {
     private Node06 first;         // pointer menunjuk data pertama
     private Node06 last;          // pointer menunjuk data terakhir
-    private Node06 temp;
+    private Node06 temp;          // pointer menunjuk data sementara
 // -------------------------------------------------------------
     // constructor      (mengambil data)
     public doubleLink() {
@@ -142,7 +144,7 @@ class doubleLink {
         return true;    
     }
 // -------------------------------------------------------------
-    // method untuk menghapus data tertentu (tidak di awal da di akhir list)
+    // method untuk menghapus data tertentu (tidak di awal dan di akhir list)
     public Node06 delete(int data) {
         Node06 index = first;           // pointer index menunjuk data yang ditunjuk oleh pointer first
         while (index.getKode() != data) {
@@ -253,28 +255,28 @@ public class prak06_22537144008 {
                     int jumlah = input.nextInt();
                     System.out.println("");
 
-                    for(i = 1; i <= jumlah ; i++) {
+                    for(i = 1; i <= jumlah ; i++) {             // akan looping sebanyak jumlah inputan yg sudah di isi di atas
                         System.out.println("Data ke-" + i );
                         System.out.print("Kode Mata Kuliah : ");
                         kodeMK = input.nextInt();
                         System.out.print("Nama Mata Kuliah (hanya bisa 1 kata): ");
-                        namaMk = input.next();
+                        namaMk = input.next();          // dapat menyimpan inputan hanya 1 kata
                         System.out.println("");
 
                         switch (subMenu) {
-                            case 1:
+                            case 1:             // memasukan data di awal
                                 list.insertFirst(kodeMK, namaMk);
                                 System.out.println("");
                                 System.out.println("!!!! Berhasil Ditambahkan !!!!");
                                 System.out.println("");
                                 break;
-                            case 2:
+                            case 2:             // memasukan data di akhir
                                 list.insertLast(kodeMK, namaMk);
                                 System.out.println("");
                                 System.out.println("!!!! Berhasil Ditambahkan !!!!");
                                 System.out.println("");
                                 break;
-                            case 3:
+                            case 3:             // memasukan data setelah data tertentu
                                 System.out.print("Data Ditambahkan Setelah (kode) : ");
                                 data =  input.nextInt();
 
@@ -285,7 +287,7 @@ public class prak06_22537144008 {
                                     System.out.println("!!!! Berhasil Ditambahkan !!!!");
                                 }
                                 break;
-                            case 4:
+                            case 4:             // memasukan data sebelum data tertentu
                                 System.out.print("Data Ditambahkan Sebelum (kode) : ");
                                 data =  input.nextInt();
 
@@ -320,21 +322,21 @@ public class prak06_22537144008 {
                 System.out.println("------------------------------------");
                 
                 switch (subMenu) {
-                    case 1:
+                    case 1:             // hapus data awal lkist
                         if(list.deleteFirst() == null) {
                             System.out.println("|| !! Tidak Ada Data !! ||");
                         } else {
                             System.out.println(" Data Dihapus Pada Awal List");
                         }
                         break;
-                    case 2:
-                        if(list.deleteLast() == null) {
+                    case 2:             // hapus data akhir list
+                        if(list.deleteLast() == null) {         
                             System.out.println("|| !! Tidak Ada Data !! ||");
                         } else {
                             System.out.println(" Data Dihapus Pada Akhir List");
                         }
                         break;
-                    case 3:
+                    case 3:             // hapus data berdasarkan inputan (kode)
                         System.out.print("Data Yang Dihapus (kode) : ");
                         data =  input.nextInt();        // memasukan inputan berupa kode yang ingin di hapus
 
@@ -366,10 +368,10 @@ public class prak06_22537144008 {
                 
                 if (!list.isEmpty()) {
                     switch (subMenu) {
-                        case 1:
+                        case 1:         // menampilkan list dari awal
                             list.tampilMaju();              // memanggil method
                             break;
-                        case 2:
+                        case 2:         // menampilkan list dari akhir
                             list.tampilMundur();
                             break;
                         case 3: 
