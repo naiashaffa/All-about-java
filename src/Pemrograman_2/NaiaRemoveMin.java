@@ -46,7 +46,7 @@ public class NaiaRemoveMin {
         while(!s.isEmpty()) {
             int n = s.pop();
 
-            if(n < min)
+            if(n < min) 
                 min = n;
 
             q.add(n);
