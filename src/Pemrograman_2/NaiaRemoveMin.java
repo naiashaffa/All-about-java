@@ -72,11 +72,11 @@ public class NaiaRemoveMin {
 /*
  * Stack before removeMin: [2, 8, 3, 19, 2, 3, 2, 7, 12, -8, 4]
  * Minimum value removed: -8
- * 
  * Stack after removeMin: [2, 8, 3, 19, 2, 3, 2, 7, 12, 4]
- * Minimum value removed: 2
  * 
+ * Minimum value removed: 2
  * Stack after removeMin: [8, 3, 19, 3, 7, 12, 4]
+ * 
  * Minimum value removed: 3
  * Stack after removeMin: [8, 19, 7, 12, 4]
  */
