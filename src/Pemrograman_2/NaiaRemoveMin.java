@@ -23,16 +23,18 @@ public class NaiaRemoveMin {
         s.push(4);
 
         // output :
-        System.out.println("Stack before removeMin: " + s);
+        System.out.println("Stack before removeMin: " + s);     // menampilkan stack awal
         int min = removeMin(s);
-        System.out.println("Minimum value removed: " + min);
-        System.out.println("Stack after removeMin: " + s);
+        System.out.println("Minimum value removed: " + min);    // menampilkan data min yg akan di hapus
+        System.out.println("Stack after removeMin: " + s);      // menampilkan stack setelah data min di hapus
+        System.out.println("");
 
         // tambahan 
-        // untuk cek apakah tetap berhasil di remove dg list baru setelahnya
+        // untuk cek apakah tetap berhasil di hapus dg list baru setelahnya
         min = removeMin(s);
         System.out.println("Minimum value removed: " + min);
         System.out.println("Stack after removeMin: " + s);
+        System.out.println("");
         min = removeMin(s);
         System.out.println("Minimum value removed: " + min);
         System.out.println("Stack after removeMin: " + s);
@@ -70,8 +72,10 @@ public class NaiaRemoveMin {
 /*
  * Stack before removeMin: [2, 8, 3, 19, 2, 3, 2, 7, 12, -8, 4]
  * Minimum value removed: -8
+ * 
  * Stack after removeMin: [2, 8, 3, 19, 2, 3, 2, 7, 12, 4]
  * Minimum value removed: 2
+ * 
  * Stack after removeMin: [8, 3, 19, 3, 7, 12, 4]
  * Minimum value removed: 3
  * Stack after removeMin: [8, 19, 7, 12, 4]
