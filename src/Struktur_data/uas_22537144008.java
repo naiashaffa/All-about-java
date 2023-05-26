@@ -1,4 +1,4 @@
-
+package Struktur_data;
 /*
  * Nama     : Naia Shaffa Camila
  * NIM      : 22537144008
