@@ -23,6 +23,7 @@ public class NaiaCh11Split {
     System.out.print(result);
     }
     
+    
 }
 
 /* {2=[be, is, or, to], 3=[not, the], 4=[that], 8=[question]} */

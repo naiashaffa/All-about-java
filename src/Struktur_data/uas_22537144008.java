@@ -1,11 +1,11 @@
-package Struktur_data;
+
 /*
  * Nama     : Naia Shaffa Camila
  * NIM      : 22537144008
  */
 
 import java.util.*;
-// menu
+// client code
 public class uas_22537144008 {
     public static void main(String[] args) {
         Tree tree = new Tree();
@@ -100,7 +100,7 @@ public class uas_22537144008 {
                         break;
 
                     default : // jika inputan tidak sesuai
-                    System.out.println("!! INPUTAN ANDA SALAH, COBA ULANG !!");
+                    System.out.println("!! INPUTAN ANDA SALAH !!");
                         break;
                 } 
                 System.out.println("====================================");
@@ -189,17 +189,17 @@ class Tree {
 
     private NodeUas search(int data){
         NodeUas index = root;
-        while (index.getData() != data) {
-            if (data < index.getData()) {
-                index = index.getLeft();
-            } else {
-                index = index.getRight();
+        while (index.getData() != data) {   // ketika data pointer index tidak sama dg data yg dimasukan
+            if (data < index.getData()) {   // jika data yang dimasukan lebih kecil dari data pointer index, maka
+                index = index.getLeft();    // pointer index akan diarahkan ke node sebelah kiri
+            } else {    // jika data yg dimasukan lebih besar dari data pointer index,
+                index = index.getRight();   // pointer index akan diarahkan ke node sebelah kanan
             }
-            if (index == null) {
-                return null;
+            if (index == null) {        // jika indexx sama dg null,
+                return null;            // bernilai null
             }
         }
-        return index;
+        return index;       // me-return index
     }
 
     public boolean insert(int data) {

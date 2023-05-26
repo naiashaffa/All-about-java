@@ -17,6 +17,7 @@ public class NaiaMapMystery2 {
         System.out.print("List awal : ");
         System.out.println(si);
 
+        mapMystery2(m);
         System.out.print("List hasil : ");
 
     }
